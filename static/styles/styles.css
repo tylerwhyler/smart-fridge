@@ -1,4 +1,69 @@
-div {
-    color: purple;
-    font-size: 100px;
+body {
+    margin: 0px;
+    font-family: Helvetica, sans-serif;
+    background-color: gray;
+    color: white;
+}
+
+#home-page {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 1fr 8fr;
+}
+
+#top-bar {
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+    font-size: 2em;
+    background-color: royalblue;
+}
+
+#side-bar {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    font-size: 1.5rem;
+    height: 100%;
+}
+
+#side-bar-wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+}
+
+#side-bar-wrapper > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(49, 49, 49);
+    border-bottom: 1px solid white;
+}
+
+#side-bar-wrapper:nth-child(1),
+#side-bar-wrapper:nth-child(2) {
+    border: 1px solid white;
+    border-bottom: 2px transparent;
+}
+
+#side-bar-wrapper > div:hover {
+    cursor: pointer;
+}
+
+#display-window {
+    padding: 20px;
+}
+
+#myFridge-content {
+    display: none;
+}
+
+#addItem-content {
+    display: none;
+}
+
+#updateFridge-content {
+    display: none;
 }

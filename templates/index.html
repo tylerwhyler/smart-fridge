@@ -1,12 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/styles/styles.css">
-    <title></title>
+
+    <title>Smart Fridge</title>
 </head>
+
 <body>
-    <div>Hello!</div>
+
+    <div id="home-page">
+
+        <div id="top-bar">
+            <div id="top-bar-wrapper">
+
+                <div>
+                    &lt;
+                </div>
+                
+                <div>
+                    40°F
+                </div>
+
+                <div>
+                    &gt;
+                </div>
+
+            </div>
+        </div>
+
+        <div id="side-bar">
+
+            <div id="display-window">
+
+                <div id="myFridge-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos officia repellat? Vitae quo a iure eaque. Rem deserunt debitis accusamus deleniti excepturi, pariatur distinctio aliquam sapiente, consectetur velit commodi.
+                    Modi illo nulla, nemo optio debitis, veniam recusandae quam quasi eveniet odio reiciendis. Reiciendis iure unde et ullam maiores sunt quae, impedit quam aperiam odio dolorum nulla. Assumenda, eum adipisci.
+                    Adipisci nisi, vel laborum tempora non saepe amet alias eligendi reprehenderit voluptatibus doloribus similique quod temporibus consectetur cum aut corrupti ab facilis esse? Fugiat ex vitae saepe minus, alias quos?
+                    Animi voluptates, eos itaque corrupti iure repellendus nihil aliquam laboriosam ullam quisquam fugit, quas numquam accusantium architecto odit eligendi vero illum id ipsa dolorum tenetur doloribus! Soluta corporis atque voluptas.
+                </div>
+
+                <div id="addItem-content">
+                    7969Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos officia repellat? Vitae quo a iure eaque. Rem deserunt debitis accusamus deleniti excepturi, pariatur distinctio aliquam sapiente, consectetur velit commodi.
+                    Modi illo nulla, nemo optio debitis, veniam recusandae quam quasi eveniet odio reiciendis. Reiciendis iure unde et ullam maiores sunt quae, impedit quam aperiam odio dolorum nulla. Assumenda, eum adipisci.
+                    Adipisci nisi, vel laborum tempora non saepe amet alias eligendi reprehenderit voluptatibus doloribus similique quod temporibus consectetur cum aut corrupti ab facilis esse? Fugiat ex vitae saepe minus, alias quos?
+                    Animi voluptates, eos itaque corrupti iure repellendus nihil aliquam laboriosam ullam quisquam fugit, quas numquam accusantium architecto odit eligendi vero illum id ipsa dolorum tenetur doloribus! Soluta corporis atque voluptas.
+                </div>
+
+                <div id="updateFridge-content">
+                    34534Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos officia repellat? Vitae quo a iure eaque. Rem deserunt debitis accusamus deleniti excepturi, pariatur distinctio aliquam sapiente, consectetur velit commodi.
+                    Modi illo nulla, nemo optio debitis, veniam recusandae quam quasi eveniet odio reiciendis. Reiciendis iure unde et ullam maiores sunt quae, impedit quam aperiam odio dolorum nulla. Assumenda, eum adipisci.
+                    Adipisci nisi, vel laborum tempora non saepe amet alias eligendi reprehenderit voluptatibus doloribus similique quod temporibus consectetur cum aut corrupti ab facilis esse? Fugiat ex vitae saepe minus, alias quos?
+                    Animi voluptates, eos itaque corrupti iure repellendus nihil aliquam laboriosam ullam quisquam fugit, quas numquam accusantium architecto odit eligendi vero illum id ipsa dolorum tenetur doloribus! Soluta corporis atque voluptas.
+                </div>
+
+            </div>
+
+            <div id="side-bar-wrapper">
+
+                <div id="fridge">
+                    My Fridge
+                </div>
+
+                <div id="addItem">
+                    Add item
+                </div>
+
+                <div id="updateFridge">
+                    Update
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
 </body>
+
+<script>
+    let myFridge = document.getElementById("fridge");
+    let addItem = document.getElementById("addItem");
+    let updateFridge = document.getElementById("updateFridge");
+
+    let showFridge = document.getElementById("myFridge-content");
+    let showAddItem = document.getElementById("addItem-content");
+    let showUpdate = document.getElementById("updateFridge-content");
+
+
+    function myFridgeClick() {
+        showFridge.style.display = "block";
+        showUpdate.style.display = "none";
+        showAddItem.style.display = "none";
+    }
+
+    function addItemClick() {
+        showAddItem.style.display = "block";
+        showUpdate.style.display = "none";
+        showFridge.style.display = "none";
+    }
+    
+    function updateFridgeClick() {
+        showUpdate.style.display = "block";
+        showAddItem.style.display = "none";
+        showFridge.style.display = "none";
+    }
+
+    myFridge.addEventListener('click', myFridgeClick);
+    addItem.addEventListener('click', addItemClick);
+    updateFridge.addEventListener('click', updateFridgeClick);
+</script>
+
 </html>
