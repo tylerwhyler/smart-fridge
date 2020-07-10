@@ -20,6 +20,17 @@ body {
     background-color: royalblue;
 }
 
+#top-bar-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#temp-up, #temp-down {
+    cursor: pointer;
+}
+
 #side-bar {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -67,3 +78,4 @@ body {
 #updateFridge-content {
     display: none;
 }
+
