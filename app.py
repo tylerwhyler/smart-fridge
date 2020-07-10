@@ -47,10 +47,56 @@ def add_item():
     item = Item.query.get(new_item.id)
 
     return item_schema.jsonify(item)
+#  End point for creating a new item
+
+@app.route("/items", methods=["GET"])
+def get_items():
+    all_items = Item.query.all()
+    result = items_schema.dump(all_items) 
+    return jsonify(result)
+
+# End point for getting all items
+
+@app.route("/item/<id>", methods=["GET"])
+def get_item(id):
+
+    item = Item.query.get(id)
+
+    return item_schema.jsonify(item)
+
+#  End point for getting a item
+
+
+@app.route("/item/<id>", methods=["PUT"])
+def update_item(id):
+    item = Item.query.get(id)
+    name = request.json['name']
+    category = request.json['category']
+    expiration = request.json['expiration']
+
+    item.name = name
+    item.category = category
+    item.expiration = expiration
+
+    db.session.commit()
+    return item_schema.jsonify(item)
+
+#  End point for updating a item
+
+@app.route("/item/<id>", methods=["DELETE"])
+def delete_item(id):
+    item = Item.query.get(id)
+    
+    db.session.delete(item)
+    db.session.commit()
+
+    return item_schema.jsonify(item)
+
+# End point for deleting a item 
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)
