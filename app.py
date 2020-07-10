@@ -33,20 +33,25 @@ items_schema = ItemSchema(many=True)
 
 #  End point for creating a new item.
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
 @app.route('/item', methods = ['POST'])
 def add_item():
-    name = request.json['name']
-    category = request.json['category']
-    expiration = request.json['expiration']
+    name = request.form['name']
+    category = request.form['category']
+    expiration = request.form['expiration']
 
     new_item = Item(name,category,expiration)
 
     db.session.add(new_item)
     db.session.commit()
 
-    item = Item.query.get(new_item.id)
+    return render_template('index.html')
 
-    return item_schema.jsonify(item)
+    # return item_schema.jsonify(item)
 #  End point for creating a new item
 
 @app.route("/items", methods=["GET"])
@@ -69,6 +74,7 @@ def get_item(id):
 
 @app.route("/item/<id>", methods=["PUT"])
 def update_item(id):
+    
     item = Item.query.get(id)
     name = request.json['name']
     category = request.json['category']
@@ -93,10 +99,6 @@ def delete_item(id):
     return item_schema.jsonify(item)
 
 # End point for deleting a item 
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
