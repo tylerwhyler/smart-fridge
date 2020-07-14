@@ -49,9 +49,9 @@ def add_item():
     db.session.add(new_item)
     db.session.commit()
 
-    return render_template('index.html')
+    # return render_template('index.html')
 
-    # return item_schema.jsonify(item)
+    return item_schema.jsonify(new_item)
 #  End point for creating a new item
 
 @app.route("/items", methods=["GET"])
